@@ -78,11 +78,10 @@ Por último, en esta parte del código, el template se encarga de resolver el fo
 
 - Va de arriba abajo  
 - Primero intenta con `$primary`  
-- Luego `$secondary`  
-- Luego `$tertiary`  
-- Si ninguno de estos entra, coge el `$default`  
+- Y si no `$secondary`   
 
-O sea, funciona como un `if, else if y else` y coge el primer valor no vacío.  
+
+O sea, funciona como un `if, else if y else` y coge el primer valor no vacío esto sirve para que compruebe si esiste img de albun si no coge img de cacion
 
 ---
 

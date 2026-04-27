@@ -8,8 +8,6 @@
     <xsl:template name="resolveImageSrc">
         <xsl:param name="primary"/>
         <xsl:param name="secondary"/>
-        <xsl:param name="tertiary"/>
-        <xsl:param name="default"/>
         <xsl:choose>
             <xsl:when test="normalize-space($primary)">
                 <xsl:value-of select="$primary"/>
@@ -17,12 +15,6 @@
             <xsl:when test="normalize-space($secondary)">
                 <xsl:value-of select="$secondary"/>
             </xsl:when>
-            <xsl:when test="normalize-space($tertiary)">
-                <xsl:value-of select="$tertiary"/>
-            </xsl:when>
-            <xsl:otherwise>
-                <xsl:value-of select="$default"/>
-            </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
     <xsl:template match="/">

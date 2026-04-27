@@ -10,8 +10,6 @@
     <xsl:template name="resolveImageSrc">
         <xsl:param name="primary"/>
         <xsl:param name="secondary"/>
-        <xsl:param name="tertiary"/>
-        <xsl:param name="default"/>
         <xsl:choose>
             <xsl:when test="normalize-space($primary)">
                 <xsl:call-template name="toAssetPath">
@@ -23,16 +21,6 @@
                     <xsl:with-param name="path" select="$secondary"/>
                 </xsl:call-template>
             </xsl:when>
-            <xsl:when test="normalize-space($tertiary)">
-                <xsl:call-template name="toAssetPath">
-                    <xsl:with-param name="path" select="$tertiary"/>
-                </xsl:call-template>
-            </xsl:when>
-            <xsl:otherwise>
-                <xsl:call-template name="toAssetPath">
-                    <xsl:with-param name="path" select="$default"/>
-                </xsl:call-template>
-            </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
 
@@ -89,12 +77,6 @@
                                                 <xsl:call-template name="resolveImageSrc">
                                                     <xsl:with-param name="primary" select="image"/>
                                                     <xsl:with-param name="secondary" select="$albumData/image"/>
-                                                    <xsl:with-param name="tertiary">
-                                                        <xsl:if test="normalize-space(albumId)">
-                                                            <xsl:value-of select="concat('assets/imgWeb/', albumId, '.jpg')"/>
-                                                        </xsl:if>
-                                                    </xsl:with-param>
-                                                    <xsl:with-param name="default" select="'assets/imgWeb/default.jpg'"/>
                                                 </xsl:call-template>
                                             </xsl:attribute>
                                         </img>
