@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Discografica</title>
+    <link rel="icon" type="image/png" href="assets/ico.png" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/nav.js" defer></script>
+</head>
+
+<body>
+    <header class="nav-box">
+        <div class="logo">Discografica</div>
+        <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">☰</button>
+        <nav aria-label="Navegacion principal">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="xml/Canciones.xml">Canciones</a></li>
+                <li><a href="xml/Albunes.xml">Albumes</a></li>
+                <li><a href="xml/bd.xml">Artistas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="principal">
+        <section class="columna-izquierda">
+            <div class="item">
+                <h1>Inicio</h1>
+                <p>Hora actual: <strong id="hora-actual">--:--:--</strong></p>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/reloj.js"></script>
+</body>
+
+</html>

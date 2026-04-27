@@ -1,0 +1,889 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../xslt/artistas.xsl"?>
+
+<Discografica>
+    <artists>
+        <!-- MGK -->
+        <artist id="mgk">
+            <grupo>Machine Gun Kelly</grupo>
+            <image>assets/imgWeb/machine-gun-kelly.jpg</image>
+            <reproducciones>14792336</reproducciones>
+            <topSongs>
+                <song>cliche</song>
+                <song>my-ex-best-friend</song>
+                <song>Lonely-Road</song>
+                <song>I-Think-Im-OKEY</song>
+                <song>Bad-Things</song>
+            </topSongs>
+        </artist>
+
+        <!-- NF -->
+        <artist id="NF">
+            <grupo>NF</grupo>
+            <image>assets/imgWeb/nf.jpg</image>
+            <reproducciones>14391882</reproducciones>
+            <topSongs>
+                <song>Let-You-Down</song>
+                <song>FEAR</song>
+                <song>The-Search</song>
+                <song>Lie</song>
+                <song>HAPPY</song>
+            </topSongs>
+        </artist>
+
+        <!-- Bring Me The Horizon-->
+        <artist id="bmth">
+            <grupo>Bring Me The Horizon</grupo>
+            <image>assets/imgWeb/bring-me-the-horizon.jpg</image>
+            <reproducciones>13691040</reproducciones>
+            <topSongs>
+                <song>Can-You-Feel-My-Heart</song>
+                <song>Throne</song>
+                <song>Sleepwalking</song>
+                <song>Doomed</song>
+                <song>DArkSide</song>
+            </topSongs>
+        </artist>
+        <!-- BABYMETAL -->
+        <artist id="babymetal">
+            <grupo>BABYMETAL</grupo>
+            <image>assets/imgWeb/babymetal.jpg</image>
+            <reproducciones>3369874</reproducciones>
+
+            <topSongs>
+                <song>RATATATA</song>
+                <song>Gimme-Chocolate</song>
+                <song>from-me-to-u</song>
+                <song>Headbangeeeeerrrrr</song>
+                <song>Song-3</song>
+            </topSongs>
+        </artist>
+
+        <!-- YUNGBLUD -->
+        <artist id="yungblud">
+            <grupo>YUNGBLUD</grupo>
+            <image>assets/imgWeb/YUNGBLUD.jpg</image>
+            <reproducciones>9754649</reproducciones>
+            <topSongs>
+                <song>i-was-made-for-lovin-you</song>
+                <song>zombie</song>
+                <song>I-Think-Im-OKEY</song>
+                <song>parents</song>
+                <song>abyss</song>
+            </topSongs>
+        </artist>
+        <!-- Limp Bizkit -->
+        <artist id="limpbizkit">
+            <grupo>Limp Bizkit</grupo>
+            <image>assets/imgWeb/limpbizkit.jpg</image>
+            <reproducciones>22206636</reproducciones>
+            <topSongs>
+                <song>Break-Stuff</song>
+                <song>Rollin</song>
+                <song>TakeALookAround</song>
+                <song>MyWay</song>
+                <song>BehindBlueEyes</song>
+            </topSongs>
+        </artist>
+    </artists>
+    <albums>
+        <!-- MGK -->
+        <album id="Tickets-To-My-Downfall">
+            <title>Tickets To My Downfall (All Access)</title>
+            <image>assets/imgWeb/Tickets-To-My-Downfall-(All-Access).jpg</image>
+            <artistId>mgk</artistId>
+            <year>2020</year>
+        </album>
+
+        <album id="lost-americana">
+            <title>lost americana</title>
+            <image>assets/imgWeb/lost-americana.jpg</image>
+            <artistId>mgk</artistId>
+            <year>2025</year>
+        </album>
+
+        <album id="Hotel-Diablo">
+            <title>Hotel Diablo Floor 13 Edition</title>
+            <image>assets/imgWeb/Hotel-Diablo-Floor-13-Edition.jpg</image>
+            <artistId>mgk</artistId>
+            <year>2019</year>
+        </album>
+
+        <album id="mainstream-sellout">
+            <title>mainstream sellout (life in pink deluxe)</title>
+            <image>assets/imgWeb/mainstream-sellout-(life-in-pink-deluxe).jpg</image>
+            <artistId>mgk</artistId>
+            <year>2022</year>
+        </album>
+
+        <album id="BINGE">
+            <title>BINGE</title>
+            <image>assets/imgWeb/BINGE.jpg</image>
+            <artistId>mgk</artistId>
+            <year>2018</year>
+        </album>
+
+        <album id="bloom">
+            <title>bloom (Deluxe)</title>
+            <image>assets/imgWeb/bloom-(Deluxe).jpg</image>
+            <artistId>mgk</artistId>
+            <year>2017</year>
+        </album>
+
+        <album id="General-Admission">
+            <title>General Admission (Deluxe)</title>
+            <image>assets/imgWeb/General-Admission-(Deluxe).jpg</image>
+            <artistId>mgk</artistId>
+            <year>2016</year>
+        </album>
+
+        <album id="Lace-Up">
+            <title>Lace Up (Deluxe)</title>
+            <image>assets/imgWeb/Lace-Up- (Deluxe).jpg</image>
+            <artistId>mgk</artistId>
+            <year>2012</year>
+        </album>
+
+        <!-- NF -->
+        <album id="HOPE">
+            <title>HOPE</title>
+            <image>assets/imgWeb/HOPE.jpg</image>
+            <artistId>NF</artistId>
+            <year>2023</year>
+        </album>
+
+        <album id="CLOUDS">
+            <title>CLOUDS (THE MIXTAPE)</title>
+            <image>assets/imgWeb/CLOUDS-(THE-MIXTAPE).jpg</image>
+            <artistId>NF</artistId>
+            <year>2021</year>
+        </album>
+
+        <album id="The-Search">
+            <title>The Search</title>
+            <image>assets/imgWeb/The-Search.jpg</image>
+            <artistId>NF</artistId>
+            <year>2019</year>
+        </album>
+
+        <album id="Perception">
+            <title>Perception</title>
+            <image>assets/imgWeb/Perception.jpg</image>
+            <artistId>NF</artistId>
+            <year>2017</year>
+        </album>
+
+        <album id="Therapy-Session">
+            <title>Therapy Session</title>
+            <image>assets/imgWeb/Therapy-Session.jpg</image>
+            <artistId>NF</artistId>
+            <year>2016</year>
+        </album>
+
+        <album id="Mansion">
+            <title>Mansion</title>
+            <image>assets/imgWeb/Mansion.jpg</image>
+            <artistId>NF</artistId>
+            <year>2015</year>
+        </album>
+
+        <!-- Bring Me The Horizon-->
+        <album id="Sempiternal">
+            <title>Sempiternal</title>
+            <image>assets/imgWeb/Sempiternal.jpg</image>
+            <artistId>bmth</artistId>
+            <year>2013</year>
+        </album>
+
+        <album id="Thats-The-Spirit">
+            <title>That's The Spirit</title>
+            <image>assets/imgWeb/That's-The-Spirit.jpg</image>
+            <artistId>bmth</artistId>
+            <year>2015</year>
+        </album>
+
+        <album id="POST-HUMAN-SURVIVAL-HORROR">
+            <title>POST HUMAN: SURVIVAL HORROR</title>
+            <image>assets/imgWeb/POST-HUMAN-SURVIVAL-HORROR.jpg</image>
+            <artistId>bmth</artistId>
+            <year>2020</year>
+        </album>
+
+        <album id="POST-HUMAN-NeX-GEn">
+            <title>POST HUMAN: NeX GEn</title>
+            <image>assets/imgWeb/POST-HUMAN-NeX-GEn.jpg</image>
+            <artistId>bmth</artistId>
+            <year>2024</year>
+        </album>
+
+        <!-- BABYMETAL -->
+        <album id="BABYMETAL">
+            <title>BABYMETAL</title>
+            <image>assets/imgWeb/BABYMETAL-albun.jpg</image>
+            <artistId>babymetal</artistId>
+            <year>2014</year>
+        </album>
+
+        <album id="Metal-Resistance">
+            <title>Metal Resistance</title>
+            <image>assets/imgWeb/Metal-Resistance.jpg</image>
+            <artistId>babymetal</artistId>
+            <year>2016</year>
+        </album>
+
+        <album id="Metal-Galaxy">
+            <title>Metal Galaxy</title>
+            <image>assets/imgWeb/Metal-Galaxy.jpg</image>
+            <artistId>babymetal</artistId>
+            <year>2019</year>
+        </album>
+
+        <album id="The-Other-One">
+            <title>The Other One</title>
+            <image>assets/imgWeb/The-Other-One.jpg</image>
+            <artistId>babymetal</artistId>
+            <year>2023</year>
+        </album>
+
+        <!-- YUNGBLUD -->
+        <album id="21st-century-liability">
+            <title>21st Century Liability</title>
+            <image>assets/imgWeb/21st-Century-Liability.jpg</image>
+            <artistId>yungblud</artistId>
+            <year>2018</year>
+        </album>
+
+        <album id="weird">
+            <title>weird!</title>
+            <image>assets/imgWeb/weird!.jpg</image>
+            <artistId>yungblud</artistId>
+            <year>2020</year>
+        </album>
+
+        <album id="YUNGBLUD">
+            <title>YUNGBLUD</title>
+            <image>assets/imgWeb/YUNGBLUD-albun.jpg</image>
+            <artistId>yungblud</artistId>
+            <year>2022</year>
+        </album>
+        <!-- Limp Bizkit -->
+        <album id="STILL-SUCKS">
+            <title>STILL SUCKS</title>
+            <image>assets/imgWeb/STILL-SUCKS.jpg</image>
+            <artistId>limpbizkit</artistId>
+            <year>2021</year>
+        </album>
+        <album id="Gold-Cobra">
+            <title>Gold Cobra(Deluxe)</title>
+            <image>assets/imgWeb/Gold-Cobra.jpg</image>
+            <artistId>limpbizkit</artistId>
+            <year>2011</year>
+        </album>
+        <album id="The-Unquetionable-Truth">
+            <title>The Unquestionable Truth (Pt.1)</title>
+            <image>assets/imgWeb/The-Unquetionable.jpg</image>
+            <artistId>limpbizkit</artistId>
+            <year>2005</year>
+        </album>
+        <album id="Result-May-Vary">
+            <title>Result May Vary</title>
+            <image>assets/imgWeb/Result-May-Vary.jpg</image>
+            <artistId>limpbizkit</artistId>
+            <year>2003</year>
+        </album>
+        <album id="New-Old-Songs">
+            <title>New Old Songs</title>
+            <image>assets/imgWeb/New-Old-Songs.jpg</image>
+            <artistId>limpbizkit</artistId>
+            <year>2001</year>
+        </album>
+        <album id="Chocolate-Starfish">
+            <title>Chocolate Starfish and the Hotdog Flavored Water</title>
+            <image>assets/imgWeb/Chocolate-Starfish.jpg</image>
+            <artistId>limpbizkit</artistId>
+            <year>2000</year>
+        </album>
+        <album id="Significant-Other">
+            <title>Significant Other</title>
+            <image>assets/imgWeb/Significant-Other.jpg</image>
+            <artistId>limpbizkit</artistId>
+            <year>1999</year>
+        </album>
+        <album id="Therre-Dollar">
+            <title>Three Dollar Bill, Y'all$</title>
+            <image>assets/imgWeb/Therre-Dollar.jpg</image>
+            <artistId>limpbizkit</artistId>
+            <year>1997</year>
+        </album>
+    </albums>
+
+    <songs>
+        <!-- MGK -->
+        <song id="cliche">
+            <title>cliche</title>
+            <reproducir>assets/mp3/cliche.mp3</reproducir>
+            <artistId>mgk</artistId>
+            <albumId>lost-americana</albumId>
+            <genre>Rock</genre>
+            <year>2025</year>
+            <reproducciones>112257765</reproducciones>
+        </song>
+
+        <song id="my-ex-best-friend">
+            <title>my ex's best friend (with blackbear)</title>
+            <reproducir>assets/mp3/my-ex-best-friend.mp3</reproducir>
+            <artistId>mgk</artistId>
+            <albumId>Tickets-To-My-Downfall</albumId>
+            <genre>Punk Rock</genre>
+            <year>2020</year>
+            <reproducciones>795772403</reproducciones>
+        </song>
+
+        <song id="Lonely-Road">
+            <title>Lonely Road (with Jelly Roll)</title>
+            <reproducir>assets/mp3/Lonely-Road.mp3</reproducir>
+            <artistId>mgk</artistId>
+            <image>assets/imgWeb/Lonely-Road.jpg</image>
+            <genre>Country</genre>
+            <year>2024</year>
+            <reproducciones>184679559</reproducciones>
+        </song>
+
+        <song id="I-Think-Im-OKEY">
+            <title>I Think I'm OKEY (feat. YUNGBLUD &amp; Travis Barker)</title>
+            <reproducir>assets/mp3/I-Think-Im-OKEY.mp3</reproducir>
+            <artistId>mgk</artistId>
+            <albumId>Hotel-Diablo</albumId>
+            <genre>Punk</genre>
+            <year>2019</year>
+            <reproducciones>581549699</reproducciones>
+        </song>
+
+        <song id="Bad-Things">
+            <title>Bad Things</title>
+            <reproducir>assets/mp3/Bad-Things.mp3</reproducir>
+            <artistId>mgk</artistId>
+            <albumId>bloom</albumId>
+            <genre>Rap</genre>
+            <year>2017</year>
+            <reproducciones>777934485</reproducciones>
+        </song>
+
+        <song id="bloody-valentine">
+            <title>bloody valentine</title>
+            <reproducir>assets/mp3/bloody-valentine.mp3</reproducir>
+            <artistId>mgk</artistId>
+            <albumId>Tickets-To-My-Downfall</albumId>
+            <genre>Punk Rock</genre>
+            <year>2020</year>
+            <reproducciones>393698253</reproducciones>
+        </song>
+
+        <song id="maybe">
+            <title>maybe (feat. Bring Me The Horizon)</title>
+            <reproducir>assets/mp3/maybe.mp3</reproducir>
+            <artistId>mgk</artistId>
+            <albumId>mainstream-sellout</albumId>
+            <genre>Punk Rock</genre>
+            <year>2022</year>
+            <reproducciones>241166761</reproducciones>
+        </song>
+
+        <song id="forget-me-too">
+            <title>forget me too (feat. Halsey)</title>
+            <reproducir>assets/mp3/forget-me-too.mp3</reproducir>
+            <artistId>mgk</artistId>
+            <albumId>Tickets-To-My-Downfall</albumId>
+            <genre>Punk Rock</genre>
+            <year>2020</year>
+            <reproducciones>381598639</reproducciones>
+        </song>
+
+        <song id="time-of-my-life">
+            <title>times of my life</title>
+            <reproducir>assets/mp3/time-of-my-life.mp3</reproducir>
+            <artistId>mgk</artistId>
+            <albumId>lost-americana</albumId>
+            <genre>Rock</genre>
+            <year>2025</year>
+            <reproducciones>82382081</reproducciones>
+        </song>
+
+        <song id="FIX-UR-FACE">
+            <title>FIX UR FACE (with Fred Durst)</title>
+            <reproducir>assets/mp3/FIX-UR-FACE.mp3</reproducir>
+            <artistId>mgk</artistId>
+            <image>assets/imgWeb/FIX-UR-FACE.jpg</image>
+            <genre>Rock</genre>
+            <year>2026</year>
+            <reproducciones>230484</reproducciones>
+        </song>
+
+        <song id="my-love">
+            <title>my-love</title>
+            <reproducir>assets/mp3/my-love.mp3</reproducir>
+            <artistId>mgk</artistId>
+            <image>assets/imgWeb/my-love.jpg</image>
+            <genre>Rock</genre>
+            <year>2026</year>
+            <reproducciones>3271573</reproducciones>
+        </song>
+
+        <!-- NF -->
+        <song id="Let-You-Down">
+            <title>Let You Down</title>
+            <reproducir>assets/mp3/Let-You-Down.mp3</reproducir>
+            <artistId>NF</artistId>
+            <albumId>Perception</albumId>
+            <genre>Rap</genre>
+            <year>2017</year>
+            <reproducciones>1707294266</reproducciones>
+        </song>
+
+        <song id="FEAR">
+            <title>FEAR</title>
+            <reproducir>assets/mp3/FEAR.mp3</reproducir>
+            <image>assets/imgWeb/FEAR.jpg</image>
+            <artistId>NF</artistId>
+            <genre>Rap</genre>
+            <year>2025</year>
+            <reproducciones>63027473</reproducciones>
+        </song>
+
+        <song id="The-Search">
+            <title>The Search</title>
+            <reproducir>assets/mp3/The-Search.mp3</reproducir>
+            <artistId>NF</artistId>
+            <albumId>The-Search</albumId>
+            <genre>Rap</genre>
+            <year>2019</year>
+            <reproducciones>759931123</reproducciones>
+        </song>
+
+        <song id="Lie">
+            <title>Lie</title>
+            <reproducir>assets/mp3/Lie.mp3</reproducir>
+            <artistId>NF</artistId>
+            <albumId>Perception</albumId>
+            <genre>Rap</genre>
+            <year>2017</year>
+            <reproducciones>712616386</reproducciones>
+        </song>
+
+        <song id="HAPPY">
+            <title>HAPPY</title>
+            <reproducir>assets/mp3/HAPPY.mp3</reproducir>
+            <artistId>NF</artistId>
+            <albumId>HOPE</albumId>
+            <genre>Rap</genre>
+            <year>2023</year>
+            <reproducciones>233636029</reproducciones>
+        </song>
+
+        <song id="HOPE">
+            <title>HOPE</title>
+            <reproducir>assets/mp3/HOPE.mp3</reproducir>
+            <artistId>NF</artistId>
+            <albumId>HOPE</albumId>
+            <genre>Rap</genre>
+            <year>2023</year>
+            <reproducciones>280639883</reproducciones>
+        </song>
+
+        <song id="WHO-I-WAS">
+            <title>WHO I WAS</title>
+            <reproducir>assets/mp3/WHO-I-WAS.mp3</reproducir>
+            <image>assets/imgWeb/WHO-I-WAS.jpg</image>
+            <artistId>NF</artistId>
+            <genre>Rap</genre>
+            <year>2025</year>
+            <reproducciones>41037808</reproducciones>
+        </song>
+
+        <song id="When-I-Grow-Up">
+            <title>When I Grow Up</title>
+            <reproducir>assets/mp3/When-I-Grow-Up.mp3</reproducir>
+            <artistId>NF</artistId>
+            <albumId>The-Search</albumId>
+            <genre>Rap</genre>
+            <year>2019</year>
+            <reproducciones>444697020</reproducciones>
+        </song>
+
+        <song id="SORRY">
+            <title>SORRY</title>
+            <reproducir>assets/mp3/SORRY.mp3</reproducir>
+            <image>assets/imgWeb/SORRY.jpg</image>
+            <artistId>NF</artistId>
+            <genre>Rap</genre>
+            <year>2025</year>
+            <reproducciones>35412288</reproducciones>
+        </song>
+
+        <song id="RUNNING">
+            <title>RUNNING</title>
+            <reproducir>assets/mp3/RUNNING.mp3</reproducir>
+            <artistId>NF</artistId>
+            <albumId>HOPE</albumId>
+            <genre>Rap</genre>
+            <year>2023</year>
+            <reproducciones>130871964</reproducciones>
+        </song>
+
+        <!-- BMTH -->
+        <song id="Can-You-Feel-My-Heart">
+            <title>Can You Feel My Heart</title>
+            <reproducir>assets/mp3/Can-You-Feel-My-Heart.mp3</reproducir>
+            <artistId>bmth</artistId>
+            <albumId>Sempiternal</albumId>
+            <genre>Rock</genre>
+            <year>2013</year>
+            <reproducciones>853192075</reproducciones>
+        </song>
+
+        <song id="Throne">
+            <title>Throne</title>
+            <reproducir>assets/mp3/Throne.mp3</reproducir>
+            <artistId>bmth</artistId>
+            <albumId>Thats-The-Spirit</albumId>
+            <genre>Rock</genre>
+            <year>2015</year>
+            <reproducciones>653792857</reproducciones>
+        </song>
+
+        <song id="Sleepwalking">
+            <title>Sleepwalking</title>
+            <reproducir>assets/mp3/Sleepwalking.mp3</reproducir>
+            <artistId>bmth</artistId>
+            <albumId>Sempiternal</albumId>
+            <genre>Rock</genre>
+            <year>2013</year>
+            <reproducciones>333826136</reproducciones>
+        </song>
+
+        <song id="Doomed">
+            <title>Doomed</title>
+            <reproducir>assets/mp3/Doomed.mp3</reproducir>
+            <artistId>bmth</artistId>
+            <albumId>Thats-The-Spirit</albumId>
+            <genre>Rock</genre>
+            <year>2015</year>
+            <reproducciones>178832798</reproducciones>
+        </song>
+
+        <song id="DArkSide">
+            <title>DArkSide</title>
+            <reproducir>assets/mp3/DArkSide.mp3</reproducir>
+            <artistId>bmth</artistId>
+            <albumId>POST-HUMAN-NeX-GEn</albumId>
+            <genre>Rock</genre>
+            <year>2024</year>
+            <reproducciones>172210043</reproducciones>
+        </song>
+
+        <song id="Kingslayer">
+            <title>Kingslayer (feat. BABYMETAL)</title>
+            <reproducir>assets/mp3/Kingslayer.mp3</reproducir>
+            <artistId>bmth</artistId>
+            <albumId>POST-HUMAN-SURVIVAL-HORROR</albumId>
+            <genre>Rock</genre>
+            <year>2020</year>
+            <reproducciones>336606986</reproducciones>
+        </song>
+
+        <song id="Follow-You">
+            <title>Follow You</title>
+            <reproducir>assets/mp3/Follow-You.mp3</reproducir>
+            <artistId>bmth</artistId>
+            <albumId>Thats-The-Spirit</albumId>
+            <genre>Rock</genre>
+            <year>2015</year>
+            <reproducciones>305681516</reproducciones>
+        </song>
+
+        <song id="Drown">
+            <title>Drown</title>
+            <reproducir>assets/mp3/Drown.mp3</reproducir>
+            <artistId>bmth</artistId>
+            <albumId>Thats-The-Spirit</albumId>
+            <genre>Rock</genre>
+            <year>2015</year>
+            <reproducciones>356400980</reproducciones>
+        </song>
+
+        <song id="Shadow-Moses">
+            <title>Shadow Moses</title>
+            <reproducir>assets/mp3/Shadow-Moses.mp3</reproducir>
+            <artistId>bmth</artistId>
+            <albumId>Sempiternal</albumId>
+            <genre>Rock</genre>
+            <year>2013</year>
+            <reproducciones>248253308</reproducciones>
+        </song>
+
+        <!-- BABYMETAL -->
+        <song id="RATATATA">
+            <title>RATATATA (with Electric Callboy)</title>
+            <reproducir>assets/mp3/RATATATA.mp3</reproducir>
+            <image>assets/imgWeb/RATATATA.jpg</image>
+            <artistId>babymetal</artistId>
+            <genre>Metal</genre>
+            <year>2024</year>
+            <reproducciones>123959260</reproducciones>
+        </song>
+
+        <song id="Gimme-Chocolate">
+            <title>Gimme Chocolate!!</title>
+            <reproducir>assets/mp3/Gimme-Chocolate.mp3</reproducir>
+            <artistId>babymetal</artistId>
+            <albumId>BABYMETAL</albumId>
+            <genre>Metal</genre>
+            <year>2014</year>
+            <reproducciones>138250459</reproducciones>
+        </song>
+
+        <song id="from-me-to-u">
+            <title>from me to u (feat. Poppy)</title>
+            <reproducir>assets/mp3/from-me-to-u.mp3</reproducir>
+            <image>assets/imgWeb/from-me-to-u.jpg</image>
+            <artistId>babymetal</artistId>
+            <genre>Metal</genre>
+            <year>2024</year>
+            <reproducciones>30714248</reproducciones>
+        </song>
+
+        <song id="Headbangeeeeerrrrr">
+            <title>Headbangeeeeerrrrr</title>
+            <reproducir>assets/mp3/Headbangeeeeerrrrr.mp3</reproducir>
+            <artistId>babymetal</artistId>
+            <albumId>BABYMETAL</albumId>
+            <genre>Metal</genre>
+            <year>2014</year>
+            <reproducciones>79328843</reproducciones>
+        </song>
+
+        <song id="Song-3">
+            <title>Song 3</title>
+            <reproducir>assets/mp3/Song-3.mp3</reproducir>
+            <artistId>babymetal</artistId>
+            <albumId>Metal-Galaxy</albumId>
+            <genre>Metal</genre>
+            <year>2019</year>
+            <reproducciones>18909160</reproducciones>
+        </song>
+
+        <song id="Megitsune">
+            <title>Megitsune</title>
+            <reproducir>assets/mp3/Megitsune.mp3</reproducir>
+            <artistId>babymetal</artistId>
+            <albumId>BABYMETAL</albumId>
+            <genre>Metal</genre>
+            <year>2014</year>
+            <reproducciones>76112500</reproducciones>
+        </song>
+
+        <song id="PA-PA-YA">
+            <title>PA PA YA!!</title>
+            <reproducir>assets/mp3/PA-PA-YA.mp3</reproducir>
+            <artistId>babymetal</artistId>
+            <albumId>Metal-Galaxy</albumId>
+            <genre>Metal</genre>
+            <year>2019</year>
+            <reproducciones>51103184</reproducciones>
+        </song>
+
+        <song id="The-End">
+            <title>The End</title>
+            <reproducir>assets/mp3/The-End.mp3</reproducir>
+            <artistId>babymetal</artistId>
+            <albumId>Metal-Galaxy</albumId>
+            <genre>Metal</genre>
+            <year>2019</year>
+            <reproducciones>49670040</reproducciones>
+        </song>
+
+        <song id="METALI">
+            <title>METALI!!</title>
+            <reproducir>assets/mp3/METALI.mp3</reproducir>
+            <artistId>babymetal</artistId>
+            <albumId>The-Other-One</albumId>
+            <genre>Metal</genre>
+            <year>2023</year>
+            <reproducciones>26361023</reproducciones>
+        </song>
+
+        <!-- YUNGBLUD -->
+        <song id="i-was-made-for-lovin-you">
+            <title>I Was Made For Lovin' You - from The Fall Guy</title>
+            <reproducir>assets/mp3/i-was-made-for-lovin-you.mp3</reproducir>
+            <image>assets/imgWeb/i-was-made-for-lovin-you.jpg</image>
+            <artistId>yungblud</artistId>
+            <genre>Rock</genre>
+            <year>2024</year>
+            <reproducciones>134909677</reproducciones>
+        </song>
+
+        <song id="zombie">
+            <title>Zombie</title>
+            <reproducir>assets/mp3/zombie.mp3</reproducir>
+            <image>assets/imgWeb/zombie.jpg</image>
+            <artistId>yungblud</artistId>
+            <genre>Rock</genre>
+            <year>2024</year>
+            <reproducciones>88505764</reproducciones>
+        </song>
+
+        <song id="parents">
+            <title>parents</title>
+            <reproducir>assets/mp3/parents.mp3</reproducir>
+            <artistId>yungblud</artistId>
+            <albumId>21st-century-liability</albumId>
+            <genre>Alternative Rock</genre>
+            <year>2018</year>
+            <reproducciones>416693806</reproducciones>
+        </song>
+
+        <song id="abyss">
+            <title>Abyss - from Kaiju No. 8</title>
+            <reproducir>assets/mp3/abyss.mp3</reproducir>
+            <image>assets/imgWeb/abyss.jpg</image>
+            <artistId>yungblud</artistId>
+            <genre>Rock</genre>
+            <year>2024</year>
+            <reproducciones>103374310</reproducciones>
+        </song>
+
+        <song id="11-minutes">
+            <title>11 Minutes (with Halsey feat. Travis Barker)</title>
+            <reproducir>assets/mp3/11-minutes.mp3</reproducir>
+            <artistId>yungblud</artistId>
+            <image>assets/imgWeb/11-Minutes.jpg</image>
+            <genre>Alternative Rock</genre>
+            <year>2019</year>
+            <reproducciones>245850416</reproducciones>
+        </song>
+
+        <song id="my-only-angel">
+            <title>My Only Angel</title>
+            <reproducir>assets/mp3/my-only-angel.mp3</reproducir>
+            <artistId>yungblud</artistId>
+            <albumId>weird</albumId>
+            <genre>Alternative Rock</genre>
+            <year>2020</year>
+            <reproducciones>19874194</reproducciones>
+        </song>
+
+        <song id="hello-heaven-hello">
+            <title>Hello Heaven, Hello</title>
+            <reproducir>assets/mp3/hello-heaven-hello.mp3</reproducir>
+            <image>assets/imgWeb/hello-heaven-hello.jpg</image>
+            <artistId>yungblud</artistId>
+            <genre>Rock</genre>
+            <year>2025</year>
+            <reproducciones>31465892</reproducciones>
+        </song>
+
+        <song id="lowlife">
+            <title>Lowlife</title>
+            <reproducir>assets/mp3/lowlife.mp3</reproducir>
+            <image>assets/imgWeb/lowlife.jpg</image>
+            <artistId>yungblud</artistId>
+            <genre>Rock</genre>
+            <year>2025</year>
+            <reproducciones>49289431</reproducciones>
+        </song>
+
+        <song id="obey-yungblud">
+            <title>Obey (with YUNGBLUD)</title>
+            <reproducir>assets/mp3/obey-yungblud.mp3</reproducir>
+            <artistId>bmth</artistId>
+            <albumId>POST-HUMAN-SURVIVAL-HORROR</albumId>
+            <genre>Rock</genre>
+            <year>2020</year>
+            <reproducciones>144068315</reproducciones>
+        </song>
+        <!-- Limp Bizkit -->
+        <song id="Break-Stuff">
+            <title>Break Stuff</title>
+            <reproducir>assets/mp3/Break-Stuff.mp3</reproducir>
+            <artistId>limpbizkit</artistId>
+            <albumId>Significant-Other</albumId>
+            <genre>NuMetal</genre>
+            <year>1999</year>
+            <reproducciones>1145099042</reproducciones>
+        </song>
+        <song id="Rollin">
+            <title>Rollin'(Air Raid Vehicle)</title>
+            <reproducir>assets/mp3/Rollin.mp3</reproducir>
+            <artistId>limpbizkit</artistId>
+            <albumId>Chocolate-Starfish</albumId>
+            <genre>NuMetal</genre>
+            <year>2000</year>
+            <reproducciones>917024134</reproducciones>
+        </song>
+        <song id="TakeALookAround">
+            <title>Take A Look Around</title>
+            <reproducir>assets/mp3/TakeALookAround.mp3</reproducir>
+            <artistId>limpbizkit</artistId>
+            <albumId>Chocolate-Starfish</albumId>
+            <genre>NuMetal</genre>
+            <year>2000</year>
+            <reproducciones>636381985</reproducciones>
+        </song>
+        <song id="MyWay">
+            <title>May Way</title>
+            <reproducir>assets/mp3/MyWay.mp3</reproducir>
+            <artistId>limpbizkit</artistId>
+            <albumId>Chocolate-Starfish</albumId>
+            <genre>NuMetal</genre>
+            <year>2000</year>
+            <reproducciones>536327933</reproducciones>
+        </song>
+        <song id="BehindBlueEyes">
+            <title>Behind Blue Eyes</title>
+            <reproducir>assets/mp3/BehindBlueEyes.mp3</reproducir>
+            <artistId>limpbizkit</artistId>
+            <albumId>Result-May-Vary</albumId>
+            <genre>NuMetal</genre>
+            <year>2003</year>
+            <reproducciones>638756630</reproducciones>
+        </song>
+        <song id="MyGeneration">
+            <title>My Generation</title>
+            <reproducir>assets/mp3/MyGeneration.mp3</reproducir>
+            <artistId>limpbizkit</artistId>
+            <albumId>Chocolate-Starfish</albumId>
+            <genre>NuMetal</genre>
+            <year>2000</year>
+            <reproducciones>293646068</reproducciones>
+        </song>
+        <song id="Nookie">
+            <title>Nookie</title>
+            <reproducir>assets/mp3/Nookie.mp3</reproducir>
+            <artistId>limpbizkit</artistId>
+            <albumId>Significant-Other</albumId>
+            <genre>NuMetal</genre>
+            <year>1999</year>
+            <reproducciones>299017648</reproducciones>
+        </song>
+        <song id="LivinItUp">
+            <title>Livin'It Up</title>
+            <reproducir>assets/mp3/LivinItUp.mp3</reproducir>
+            <artistId>limpbizkit</artistId>
+            <albumId>Chocolate-Starfish</albumId>
+            <genre>NuMetal</genre>
+            <year>2000</year>
+            <reproducciones>200014210</reproducciones>
+        </song>
+        <song id="EatYouAlive">
+            <title>Eat You Alive</title>
+            <reproducir>assets/mp3/EatYouAlive.mp3</reproducir>
+            <artistId>limpbizkit</artistId>
+            <albumId>Result-May-Vary</albumId>
+            <genre>NuMetal</genre>
+            <year>2003</year>
+            <reproducciones>94728482</reproducciones>
+        </song>
+    </songs>
+</Discografica>
+
