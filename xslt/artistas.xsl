@@ -1,10 +1,13 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
     <xsl:output method="html" indent="yes"/>
+    <!-- Formato numeros en ES -->
     <xsl:decimal-format name="es" decimal-separator="," grouping-separator="."/>
 
+    <!-- Busqueda rapida por id -->
     <xsl:key name="artistById" match="artists/artist" use="@id"/>
     <xsl:key name="albumById" match="albums/album" use="@id"/>
 
+    <!-- Selecciona ruta de img si hay -->
     <xsl:template name="resolveImageSrc">
         <xsl:param name="primary"/>
         <xsl:param name="secondary"/>
@@ -17,6 +20,7 @@
             </xsl:when>
         </xsl:choose>
     </xsl:template>
+    <!--HTML-->
     <xsl:template match="/">
         <html>
             <head>
@@ -46,6 +50,7 @@
                 </div>
                 <div class="principal">
                     <div class="columna-izquierda">
+                        <!-- Top artistas ordenados por reproducciones -->
                         <xsl:for-each select="Discografica/artists/artist">
                             <xsl:sort select="reproducciones" data-type="number" order="descending"/>
                             <xsl:if test="position() &lt;= 6">
@@ -74,6 +79,7 @@
                         </xsl:for-each>
                     </div>
                 </div>
+            <footer class="site-footer">2026 - Discografica by Darío</footer>
             </body>
         </html>
     </xsl:template>

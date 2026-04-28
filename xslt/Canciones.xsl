@@ -2,41 +2,43 @@
     <xsl:output method="html" indent="yes"/>
     <xsl:decimal-format name="es" decimal-separator="," grouping-separator="."/>
 
+    <!--Dclarar variables -->
     <xsl:variable name="db" select="document('../xml/bd.xml')/Discografica"/>
 
+    <!-- Busqueda rapida por id -->
     <xsl:key name="artistById" match="artists/artist" use="@id"/>
     <xsl:key name="albumById" match="albums/album" use="@id"/>
 
+    <!-- Selecciona img de cancion o album -->
     <xsl:template name="resolveImageSrc">
         <xsl:param name="primary"/>
         <xsl:param name="secondary"/>
         <xsl:choose>
             <xsl:when test="normalize-space($primary)">
-                <xsl:call-template name="toAssetPath">
-                    <xsl:with-param name="path" select="$primary"/>
-                </xsl:call-template>
+                <xsl:choose>
+                    <xsl:when test="starts-with($primary, '../') or starts-with($primary, 'http://') or starts-with($primary, 'https://')">
+                        <xsl:value-of select="$primary"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="concat('../', $primary)"/>
+                    </xsl:otherwise>
+                </xsl:choose>
             </xsl:when>
             <xsl:when test="normalize-space($secondary)">
-                <xsl:call-template name="toAssetPath">
-                    <xsl:with-param name="path" select="$secondary"/>
-                </xsl:call-template>
+                <xsl:choose>
+                    <xsl:when test="starts-with($secondary, '../') or starts-with($secondary, 'http://') or starts-with($secondary, 'https://')">
+                        <xsl:value-of select="$secondary"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="concat('../', $secondary)"/>
+                    </xsl:otherwise>
+                </xsl:choose>
             </xsl:when>
         </xsl:choose>
     </xsl:template>
 
-    <xsl:template name="toAssetPath">
-        <xsl:param name="path"/>
-        <xsl:choose>
-            <xsl:when test="not(normalize-space($path))"/>
-            <xsl:when test="starts-with($path, '../') or starts-with($path, 'http://') or starts-with($path, 'https://')">
-                <xsl:value-of select="$path"/>
-            </xsl:when>
-            <xsl:otherwise>
-                <xsl:value-of select="concat('../', $path)"/>
-            </xsl:otherwise>
-        </xsl:choose>
-    </xsl:template>
 
+    <!--HTML-->
     <xsl:template match="/">
         <html>
             <head>
@@ -90,12 +92,18 @@
                                             Artista: <xsl:value-of select="key('artistById', artistId)/grupo"/>
                                         <br/>
                                          Reproducciones: <xsl:value-of select="format-number(number(reproducciones), '#.##0', 'es')"/>
+                                            <!-- Solo pinta audio si existe ruta -->
                                             <xsl:if test="normalize-space(reproducir)">
                                                 <audio class="song-player" controls="controls" preload="none">
                                                     <xsl:attribute name="src">
-                                                        <xsl:call-template name="toAssetPath">
-                                                            <xsl:with-param name="path" select="reproducir"/>
-                                                        </xsl:call-template>
+                                                        <xsl:choose>
+                                                            <xsl:when test="starts-with(reproducir, '../') or starts-with(reproducir, 'http://') or starts-with(reproducir, 'https://')">
+                                                                <xsl:value-of select="reproducir"/>
+                                                            </xsl:when>
+                                                            <xsl:otherwise>
+                                                                <xsl:value-of select="concat('../', reproducir)"/>
+                                                            </xsl:otherwise>
+                                                        </xsl:choose>
                                                     </xsl:attribute>
                                                 </audio>
                                             </xsl:if>
@@ -106,6 +114,7 @@
                     </div>
                 </div>
             </div>
+            <footer class="site-footer">2026 - Discografica by Darío</footer>
         </body>
     </html>
 </xsl:template>

@@ -1,4 +1,5 @@
-﻿:root {
+﻿/* Variables para toda la web */
+:root {
   --fondo: #f2f4f7;
   --panel: #ffffff;
   --blanco: #fff;
@@ -11,10 +12,12 @@
   --sombra-suave: 0 4px 12px rgba(15, 23, 42, 0.06);
 }
 
+/* Ajuste global para no romper los tamaños */
 * {
   box-sizing: border-box;
 }
 
+/* Estilo base de toda la página */
 body {
   margin: 0;
   padding: 14px;
@@ -35,12 +38,14 @@ body {
     top left;
 }
 
+/* Limita el ancho del contenido */
 .nav-box,
 .principal {
   max-width: 1220px;
   margin: 0 auto;
 }
 
+/* Bordes redondeo y sombra para los paneles */
 .nav-box,
 .bloque-artista-unico,
 .columna-derecha {
@@ -49,6 +54,7 @@ body {
   box-shadow: var(--sombra);
 }
 
+/* Cabecera superior donde van el logo y el menú principal */
 .nav-box {
   display: flex;
   justify-content: space-between;
@@ -58,7 +64,7 @@ body {
   padding: 16px 22px;
   background: var(--blanco);
 }
-
+/*hamburger*/
 .nav-toggle {
   display: none;
   align-items: center;
@@ -72,7 +78,7 @@ body {
   font-size: 22px;
   cursor: pointer;
 }
-
+/*Formato especia para el texto discografia*/
 .logo {
   color: #0b1220;
   font-size: 30px;
@@ -107,12 +113,18 @@ body {
     background-color 0.2s ease,
     border-color 0.2s ease;
 }
-
+/* Asegura que los enlaces visitados se vean igual que los no visitados */
+.nav-links a:visited {
+  color: #0b1220;
+}
+/* Resalta el enlace al pasar el ratón */
 .nav-links a:hover {
   background: #ecfeff;
   border-color: #99f6e4;
 }
 
+
+/* Colunas/div para la web */
 .principal {
   display: flex;
   align-items: flex-start;
@@ -134,13 +146,13 @@ body {
   padding: 16px;
   background: var(--panel);
 }
-
+/*Bloktipe de artist*/
 .bloque-artista-unico {
   width: 100%;
   padding: 16px;
   background: var(--panel);
 }
-
+/*Coluna top songs*/
 .distribucion-artista {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -151,7 +163,7 @@ body {
 .seccion-artista {
   margin-top: 18px;
 }
-
+/*apariencia top caciones*/
 .top-canciones-derecha {
   padding: 12px;
   border: 1px solid var(--borde);
@@ -184,6 +196,7 @@ hr {
   border-top: 2px dashed #94a3b8;
 }
 
+/* Tarjetas rpara el contenido*/
 .item {
   margin-bottom: 12px;
   padding: 12px;
@@ -198,6 +211,7 @@ hr {
   color: var(--titulo);
 }
 
+/* bloktipe img - texto */
 .artist-item,
 .media-item {
   display: grid;
@@ -210,6 +224,7 @@ hr {
   min-width: 0;
 }
 
+/*Formato img artistas y musica*/
 .artist-photo,
 .cover-photo {
   width: 86px;
@@ -217,15 +232,16 @@ hr {
   object-fit: cover;
   border: 1px solid var(--borde);
 }
-
+/*foto artista circular*/
 .artist-photo {
   border-radius: 50%;
 }
-
+/*foto disco cuadrado redondeado*/
 .cover-photo {
   border-radius: 10px;
 }
 
+/* img artista spotifi  desde aqui hasta 288*/
 .info-artista {
   position: relative;
   display: flex;
@@ -252,7 +268,6 @@ hr {
     rgba(2, 6, 23, 0.14) 100%
   );
 }
-
 .capa-artista {
   position: relative;
   z-index: 1;
@@ -275,6 +290,7 @@ hr {
   font-weight: 700;
 }
 
+/* blokipe con bio */
 .biografia-artista {
   margin-bottom: 20px;
   padding: 16px 18px;
@@ -295,6 +311,7 @@ hr {
   color: var(--secundario);
 }
 
+/* trucate textos ... */
 .truncate-title {
   display: inline-block;
   width: 100%;
@@ -303,12 +320,14 @@ hr {
   text-overflow: ellipsis;
 }
 
+/* reproductor */
 .song-player {
   display: block;
   width: 100%;
   margin-top: 8px;
 }
 
+/* grip de caciones */
 .songs-grid,
 .albums-grid {
   display: grid;
@@ -331,64 +350,66 @@ hr {
   font-size: 25px;
 }
 
+/* Footer  */
+.site-footer {
+  text-align: center;
+  padding: 12px 0;
+  color: var(--secundario);
+  font-size: 14px;
+  margin-top: 18px;
+}
+
+
 @media (max-width: 768px) {
-  .nav-box {
+  .songs-grid,
+  .albums-grid {
+    grid-template-columns: 1fr;
+  }
+    .nav-box {
+    position: relative;
     flex-wrap: wrap;
-    justify-content: space-between;
     gap: 10px;
+    padding-top: 22px;
+  }
+
+  .logo {
+    order: 2;
+    width: auto;
+    text-align: left;
+    white-space: normal;
   }
 
   .nav-toggle {
     display: inline-flex;
+    position: absolute;
+    top: 16px;
+    right: 16px;
   }
 
   .nav-links {
+    order: 3;
     display: none;
-    flex-direction: column;
-    gap: 12px;
     width: 100%;
-    margin-top: 10px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 6px;
+  }
+
+  .nav-links a {
+    display: inline-block;
+    width: auto;
+    text-align: center;
   }
 
   .nav-box.is-open .nav-links {
     display: flex;
   }
-
-  .principal {
-    flex-direction: column;
+  
+.distribucion-artista {
+    display: block;
   }
 
-  .item {
-    margin-bottom: 12px;
-    padding: 12px;
-    grid-template-columns: 1fr; 
-  }
-
-  .cover-photo,
-  .artist-photo {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
-
-  .columna-izquierda,
-  .columna-derecha {
-    width: 100%;
-  }
-
-  .songs-grid,
-  .albums-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .artist-item,
-  .media-item {
-    grid-template-columns: 1fr;
-    justify-items: start;
-  }
-
-  .song-player {
-    width: 100%;
-    margin-top: 8px;
-  }
 }
+
+

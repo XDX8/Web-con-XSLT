@@ -2,7 +2,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
     <xsl:output method="html" indent="yes"/>
     <xsl:decimal-format name="es" decimal-separator="," grouping-separator="."/>
-
+    <!--Dclarar variables -->
     <xsl:variable name="db" select="document('../xml/bd.xml')/Discografica"/>
     <xsl:variable name="artistId" select="/vista/@artistId"/>
     <xsl:variable name="artist" select="$db/artists/artist[@id=$artistId]"/>
@@ -12,8 +12,10 @@
         </xsl:call-template>
     </xsl:variable>
 
+    <!-- Texto biografia segun el id -->
     <xsl:template name="getBio">
         <xsl:param name="id"/>
+        <!--Close de biogradia dependiendo del id-->
         <xsl:choose>
             <xsl:when test="$id='NF'">NF, nombre artístico de Nathan Feuerstein, es un rapero estadounidense conocido por su estilo emocional y autobiográfico. Su música mezcla hip hop con elementos cinematográficos, abordando temas como ansiedad, depresión, conflictos familiares y experiencias personales. Sus álbumes, incluidos Mansion, The Search y Clouds, han recibido elogios por su autenticidad y la capacidad de conectar con oyentes jóvenes que buscan profundidad lírica. A diferencia de otros raperos, NF evita colaboraciones frecuentes con artistas comerciales, manteniendo un enfoque introspectivo en su obra. Su sonido combina producción pulida, instrumentales intensas y una narrativa que refleja luchas internas y superación personal. Gracias a su autenticidad y consistencia, ha consolidado una base de fans leales y se ha posicionado como uno de los artistas de rap emocional más influyentes de su generación.</xsl:when>
             <xsl:when test="$id='mgk'">Colson Baker, conocido como Machine Gun Kelly , es un cantante, rapero y actor de Cleveland. Comenzó su carrera con mixtapes y ganó notoriedad tras firmar con un sello importante en 2011. Inicialmente reconocido por su estilo de rap rápido y lírico, con álbumes como Lace Up y Bloom, MGK se transformó hacia el rock emo y pop punk en trabajos como Tickets to My Downfall y Mainstream Sellout, consiguiendo su primera nominación al Grammy. También ha incursionado en cine, destacando en The Dirt y Taurus. Su música aborda experiencias personales, relaciones y emociones intensas, lo que le ha permitido conectar con una audiencia amplia y diversa. A lo largo de su carrera ha colaborado con múltiples artistas, mostrando versatilidad y capacidad de reinvención, consolidándose como uno de los referentes modernos del rock contemporáneo.</xsl:when>
@@ -27,42 +29,46 @@
         </xsl:choose>
     </xsl:template>
 
+    <!--Misma logica de simepre con las img-->
     <xsl:template name="resolveImageSrc">
         <xsl:param name="primary"/>
         <xsl:param name="secondary"/>
         <xsl:param name="default"/>
         <xsl:choose>
             <xsl:when test="normalize-space($primary)">
-                <xsl:call-template name="toAssetPath">
-                    <xsl:with-param name="path" select="$primary"/>
-                </xsl:call-template>
+                <xsl:choose>
+                    <xsl:when test="starts-with($primary, '../') or starts-with($primary, 'http://') or starts-with($primary, 'https://')">
+                        <xsl:value-of select="$primary"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="concat('../', $primary)"/>
+                    </xsl:otherwise>
+                </xsl:choose>
             </xsl:when>
             <xsl:when test="normalize-space($secondary)">
-                <xsl:call-template name="toAssetPath">
-                    <xsl:with-param name="path" select="$secondary"/>
-                </xsl:call-template>
+                <xsl:choose>
+                    <xsl:when test="starts-with($secondary, '../') or starts-with($secondary, 'http://') or starts-with($secondary, 'https://')">
+                        <xsl:value-of select="$secondary"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="concat('../', $secondary)"/>
+                    </xsl:otherwise>
+                </xsl:choose>
             </xsl:when>
             <xsl:otherwise>
-                <xsl:call-template name="toAssetPath">
-                    <xsl:with-param name="path" select="$default"/>
-                </xsl:call-template>
+                <xsl:choose>
+                    <xsl:when test="starts-with($default, '../') or starts-with($default, 'http://') or starts-with($default, 'https://')">
+                        <xsl:value-of select="$default"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="concat('../', $default)"/>
+                    </xsl:otherwise>
+                </xsl:choose>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
 
-    <xsl:template name="toAssetPath">
-        <xsl:param name="path"/>
-        <xsl:choose>
-            <xsl:when test="not(normalize-space($path))"/>
-            <xsl:when test="starts-with($path, '../') or starts-with($path, 'http://') or starts-with($path, 'https://')">
-                <xsl:value-of select="$path"/>
-            </xsl:when>
-            <xsl:otherwise>
-                <xsl:value-of select="concat('../', $path)"/>
-            </xsl:otherwise>
-        </xsl:choose>
-    </xsl:template>
-
+    <!--HTML-->
     <xsl:template match="/">
         <html>
             <head>
@@ -102,9 +108,14 @@
                                 <div class="info-artista">
                                     <xsl:attribute name="style">
                                         <xsl:text>background-image:url('</xsl:text>
-                                        <xsl:call-template name="toAssetPath">
-                                            <xsl:with-param name="path" select="$artist/image"/>
-                                        </xsl:call-template>
+                                        <xsl:choose>
+                                            <xsl:when test="starts-with($artist/image, '../') or starts-with($artist/image, 'http://') or starts-with($artist/image, 'https://')">
+                                                <xsl:value-of select="$artist/image"/>
+                                            </xsl:when>
+                                            <xsl:otherwise>
+                                                <xsl:value-of select="concat('../', $artist/image)"/>
+                                            </xsl:otherwise>
+                                        </xsl:choose>
                                         <xsl:text>')</xsl:text>
                                     </xsl:attribute>
                                     <div class="capa-artista">
@@ -116,6 +127,7 @@
                                     </div>
                                 </div>
 
+                                <!-- Bloque de biografia -->
                                 <div class="biografia-artista">
                                     <h2>Biografía</h2>
                                     <p>
@@ -123,6 +135,7 @@
                                     </p>
                                 </div>
 
+                                <!-- Albunes del artista -->
                                 <div class="seccion-artista">
                                     <h2>Albumes</h2>
                                     <div class="albums-grid">
@@ -131,9 +144,14 @@
                                             <div class="item media-item">
                                                 <img class="cover-photo" alt="Portada del album">
                                                     <xsl:attribute name="src">
-                                                        <xsl:call-template name="toAssetPath">
-                                                            <xsl:with-param name="path" select="image"/>
-                                                        </xsl:call-template>
+                                                        <xsl:choose>
+                                                            <xsl:when test="starts-with(image, '../') or starts-with(image, 'http://') or starts-with(image, 'https://')">
+                                                                <xsl:value-of select="image"/>
+                                                            </xsl:when>
+                                                            <xsl:otherwise>
+                                                                <xsl:value-of select="concat('../', image)"/>
+                                                            </xsl:otherwise>
+                                                        </xsl:choose>
                                                     </xsl:attribute>
                                                 </img>
                                                 <div>
@@ -149,6 +167,7 @@
                                 </div>
                             </div>
 
+                            <!-- Top canciones del artista -->
                             <div class="top-canciones-derecha">
                                 <h2>Top Canciones</h2>
                                 <div class="songs-grid">
@@ -189,6 +208,7 @@
                         </div>
                     </div>
                 </div>
+                <footer class="site-footer">2026 - Discografica by Darío</footer>            
             </body>
         </html>
     </xsl:template>
