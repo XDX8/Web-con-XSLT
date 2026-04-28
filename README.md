@@ -43,7 +43,7 @@ El archivo principal `bd.xml` actúa como base de datos:
 
 ---
 
-## 🎤 Artistas
+## Artistas
 
 Cada artista contiene:
 
