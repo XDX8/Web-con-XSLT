@@ -1,229 +1,257 @@
-﻿# **Descripción del XML y XSL**
+# Documentación — Web con XML + XSLT
 
-Vale, he creado este pequeño `XML` llamado **bd** que va a contener toda la información de la **WEB**, en el que vamos a tener distintos artistas con su propio id para que después podamos sacar toda su información simplemente con su id.
-
----
-
-## Artistas
-
-En este caso, en **artista** vamos a guardar:
-
-- La imagen del artista como una ruta que en este caso apunta a la carpeta imágenes  
-- El nombre real del artista (nombre con un formato lógico)  
-- Sus reproducciones (con formato)  
-- Su top 5 de canciones más escuchadas del momento (en este último lo que guardamos es su id)  
+Este proyecto consiste en una web generada dinámicamente a partir de datos XML usando hojas de transformación XSLT.
+La idea principal es separar **contenido (XML)** de **presentación (XSL)**, permitiendo generar HTML en el navegador.
 
 ---
 
-## Álbum
+##  Concepto general
 
-Luego, en **álbum** vamos a guardar este último como el artista con su id, pero dentro vamos a tener su información lógica:
+* **XML (`bd.xml`)** → almacena todos los datos
+* **XSLT** → transforma esos datos en HTML
+* **CSS** → aplica estilos visuales
 
-- Título con formato portada  
-- Año de salida  
+El navegador procesa el XML junto con la XSL y genera la página final automáticamente.
+
+---
+
+##  Estructura de datos (XML)
+
+El archivo principal `bd.xml` actúa como base de datos:
+
+```
+    Discografica
+    ├── artists
+    │   └── artist (id)
+    │       ├── grupo
+    │       ├── image
+    │       ├── reproducciones
+    │       └── topSongs
+    │           └── song (id)
+    ├── albums
+    │   └── album (id)
+    │       ├── title
+    │       ├── image
+    │       └── year
+    └── songs
+        └── song (id)
+            ├── title
+            ├── genre
+            ├── year
+            └── reproducciones
+```
+
+---
+
+## 🎤 Artistas
+
+Cada artista contiene:
+
+* **ID único** → clave para relacionar datos
+* **Imagen** → ruta local
+* **Nombre del grupo/artista**
+* **Número de reproducciones** (formateado)
+* **Top 5 canciones** (referencias por ID)
+
+Esto permite reutilizar información sin duplicarla.
+
+---
+
+## Álbumes
+
+Cada álbum está vinculado a un artista mediante su `id`:
+
+* **Título**
+* **Imagen**
+* **Año de lanzamiento**
 
 ---
 
 ## Canciones
 
-Y por último, en **canciones** vamos a darle formato real al top de canciones de cada artista:
+Las canciones contienen la información completa:
 
-- Guardamos su top 10 de canciones más escuchadas en este momento  
-- En casos especiales (que la canción sea un single o un EP) se le agrega un apartado de imagen  
-
----
-
-## Arquitectura general
-
-La web usa:
-
-- 1 XML principal con todos los datos: bd.xml  
-- Varias hojas XSL para pintar vistas  
-- XML puente para abrir cada vista en navegador  
-- 1 CSS global para todos los estilos  
-
-Flujo base:
-
-1. El navegador abre un XML.  
-2. Ese XML carga una hoja XSL con xml-stylesheet.  
-3. La XSL genera HTML final.  
-4. Ese HTML enlaza css/styles.css.  
+* **Título**
+* **Género**
+* **Año**
+* **Reproducciones**
+* **Imagen opcional** (para singles o EPs)
 
 ---
 
-## **XSL**
+## Arquitectura de la web
 
-Luego ya en el `XSL` cogemos toda esta información y le damos sentido:
+### Archivos principales
 
-### 1º Inicialización
----
-![Captura 1](assets/imgMD/1.png)
-
----
-De todo, inicializamos el `XSL` y le decimos que va a tener un formato de salida HTML (con la línea 2).
-
-### 2º Formato de números e ID
-Creamos un formato para los números:
-
-- Esto lo que hace es que un número pase de ser `10000000` a `10.000.000`  
-- Si quisiéramos darle un formato con decimales usaríamos la “,”  
-- Luego creamos un “formato” para los id para poder usarlo de forma rápida  
-
-### 3º Template de imágenes
----
-![Captura 2](assets/imgMD/2.png)
-
----
-Por último, en esta parte del código, el template se encarga de resolver el formato de las imágenes:
-
-- Va de arriba abajo  
-- Primero intenta con `$primary`  
-- Y si no `$secondary`   
-
-
-O sea, funciona como un `if, else if y else` y coge el primer valor no vacío esto sirve para que compruebe si esiste img de albun si no coge img de cacion
+* `bd.xml` → base de datos
+* `xslt/*.xsl` → vistas
+* `xml/*.xml` → XML puente
+* `css/styles.css` → estilos
 
 ---
 
-## **Estructura XML**
----
-    Discografica
-        ├── artists
-        │       ├── artist (id)
-        │       ├── grupo
-        │       ├── image
-        │       ├── reproducciones
-        │       └── topSongs
-        │               └── song (id)
-        ├── albums
-        │       └── álbum (id)
-        │               ├── title
-        │               ├── image
-        │               └── year
-        └── songs
-                └── song (id)
-                        ├── title
-                        ├── genre
-                        ├── year
-                        └── reproducciones
+## Flujo de funcionamiento
+
+```
+XML → XSLT → HTML → CSS
+```
+
+1. Se abre un XML en el navegador
+2. Este referencia una hoja XSL (`xml-stylesheet`)
+3. La XSL transforma los datos a HTML
+4. El HTML carga el CSS
 
 ---
 
-## **HTML**
+## XML puente
 
-### 1º Base
----
-![Captura 3](assets/imgMD/3.png)
+No se puede abrir directamente un XSL en el navegador, por eso se usan XML intermedios:
 
----
-Lo que hacemos es enlazar el HTML con un archivo CSS, en este caso `styles.css`. Luego, lo típico de un HTML: añadimos un title, creamos un NAV para poder movernos por la **WEB** a través del `XML`.  
+```xml
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="xslt/artista.xsl"?>
+<vista artistId="1"/>
+```
 
-### 2º Mostrar artistas
----
-![Captura 4](assets/imgMD/4.png)
+Este XML:
 
----
-Creamos un `for-each` para sacar todos los artistas:
-
-- Utilizando `sort`, los ordenamos por el número de reproducciones de forma descendente  
-- Luego limitamos la salida a 6 con `position() < 6`  
-- En este caso solo hay 6 artistas, pero esta función es útil si, por ejemplo, quiero mostrar el top 3  
-- Después usamos la misma lógica del if para las imágenes (explicado en el apartado 3 de `XSL`)  
-
-### 3º Enlaces dinámicos
----
-![Captura 5](assets/imgMD/5.png)
+* Activa la transformación XSL
+* Pasa parámetros (como `artistId`)
 
 ---
 
-Creamos un enlace dinámico:
+## XSLT — Lógica de transformación
 
-- Basado en el id del artista  
-- Le agregamos el `.xml`  
+### 1. Inicialización
 
-¿Por qué se hace esto?
+```xml
+<xsl:output method="html"/>
+```
 
-- Porque ahora con solo 6 artistas no hay problema  
-- Pero de esta forma estás generando un enlace por cada artista  
-- De tal forma que si tenemos 100 artistas, con este código se generan enlaces a esos 100  
-
-Cogemos el nombre del grupo y el número total de reproducciones y le agregamos el formato de número antes definido.  
+Define que la salida será HTML.
 
 ---
 
-## Por qué hay tantos `XML`
+### 2. Formato de datos
 
-Hay un pequeño problema al usar `XSL`:
-
-- Nosotros no podemos abrir directamente como queremos un `XSL`  
-- Si lo abrimos en la **WEB**, lo único que vamos a ver es código  
-
-### Solución
----
-![Captura 6](assets/imgMD/6.png)
-
----
-Para cada `XSL` tenemos un `XML` que contiene algo muy básico:
-
-- La declaración de `XML`  
-- El enlace que indica que este `XML` lo abramos con la información que tenemos dentro de `XSL`  
-- Un elemento `<vista/>` que se crea para que el `XML` sea válido  
+* Números grandes → `10.000.000`
+* Uso de `format-number()`
+* Variables para IDs reutilizables
 
 ---
 
-## **Cómo funciona un solo XSL para todos los artistas**
+### 3. Plantilla de imágenes
 
-- Como acabamos de decir, cada artista tiene su XML puente en la carpeta `xml`  
-- Todos esos XML usan el mismo XSL: `xslt/artista.xsl`  
-- Lo único que cambia entre XMLs es el atributo `artistId`  
+Sistema condicional:
 
-### Qué hace el XSL único
+```
+primary → secondary → fallback
+```
 
-- Lee `artistId` desde `/vista/@artistId`  
-- Busca en `bd.xml` el artista correspondiente  
-- Pinta la misma estructura visual:
-    - cabecera  
-    - biografía  
-    - álbumes  
-    - top canciones  
+Funciona como:
+
+* Si hay imagen de álbum → usarla
+* Si no → usar imagen de canción
+
+---
+
+### 4. Listado de artistas
+
+```xml
+<xsl:for-each select="...">
+<xsl:sort select="reproducciones" order="descending"/>
+```
+
+* Orden descendente por reproducciones
+* Limitación de resultados:
+
+```xml
+position() < 6
+```
+
+---
+
+### 5. Enlaces dinámicos
+
+```
+{id}.xml
+```
+
+Ventaja:
+
+* Escalable automáticamente
+* Funciona igual con pocos o muchos artistas
+
+---
+
+## XSL único para todos los artistas
+
+Todos los XML usan:
+
+```
+xslt/artista.xsl
+```
+
+### Diferencia
+
+Solo cambia:
+
+```xml
+/vista/@artistId
+```
+
+---
+
+### Funcionamiento
+
+El XSL:
+
+1. Lee el ID del artista
+2. Busca en `bd.xml`
+3. Genera la vista completa:
+
+   * Cabecera
+   * Biografía
+   * Álbumes
+   * Top canciones
+
+---
 
 ### Ventajas
 
-Antes tenía 6 XSL casi idénticos. Lo único que cambiaba era el artista y su información. Luego descubrí que podía hacer lo mismo usando solo el ID del artista, ya que toda la información (álbumes, canciones, etc.) viene de este.
-
-Lo único que todavía queda repetido son 4 líneas que obtienen un texto de la biografía; este también cambia usando un if para cada artista.
-
-Resultado:
-
-- Menos código repetido  
-- Más fácil de mantener  
-- Misma funcionalidad final  
-
-### Funcion de reproducir caciones 
----
-![Captura 7](assets/imgMD/7.png)
+* Menos duplicación de código
+* Más fácil mantenimiento
+* Mayor escalabilidad
 
 ---
 
-En este fragmento añadimos la reproducción de audio de una canción, pero solo si existe:
+## Reproducción de canciones
 
-- Usamos `<xsl:if test="normalize-space(reproducir)">`  
-  - Esto comprueba que el campo `reproducir` no esté vacío  
+Se añade audio solo si existe:
 
-- Si se cumple la condición, se crea una etiqueta `<audio>`:
-  - Con clase `song-player` para poder darle estilo con CSS  
-  - `controls="controls"` para mostrar los controles de reproducción  
-  - `preload="none"` para evitar que el audio se cargue automáticamente  
+```xml
+<xsl:if test="normalize-space(reproducir)">
+```
 
-- Dentro del `<audio>` definimos dinámicamente el atributo `src`:
-  - Usamos `<xsl:attribute name="src">`  
-  - Llamamos al template `toAssetPath`  
-  - Le pasamos como parámetro la ruta del audio `reproducir`
+```html
+<audio controls preload="none" class="song-player">
+```
 
-En resumen:
+### Características
 
-- Solo se muestra el reproductor si hay audio disponible  
-- La ruta del archivo se genera dinámicamente  
-- Se mantiene optimizado evitando cargas innecesarias  
+* Solo aparece si hay archivo
+* Ruta generada dinámicamente
+* No precarga el audio (optimización)
 
---- 
+---
+
+## Conclusión
+
+Este proyecto demuestra cómo construir una web completa usando XML + XSLT:
+
+### Puntos clave
+
+* Separación entre datos y presentación
+* Generación dinámica sin backend
+* Escalabilidad basada en IDs
+* Código reutilizable con XSL único
